@@ -1,0 +1,318 @@
+//import the fonts(antonio and spartan) from google fonts
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul {
+    list-style-type: none;
+}
+//the class will be hide the hamburger menu
+.hide_desktop {
+    display: none;
+    color: white;
+}
+body {
+    background-color: #070724;
+    // this is the stars background for all pages
+    .background{
+        background-image: url(../imgs/background-stars.svg);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+}
+header {
+    text-transform: uppercase;
+    font-size: .7rem;
+    padding: 2em;
+    border-bottom: .5px solid hsla(0, 0%, 100%, 0.2);
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .hero {
+            h1 {
+                color: white;
+                font-family: 'Antonio', sans-serif;
+                letter-spacing: 2px;
+                user-select: none;
+            }
+        }
+        .ham_menu {
+            cursor: pointer;
+        }
+        nav {
+            font-family: 'Spartan', sans-serif;
+            ul {
+                display: flex;
+                li {
+                    margin-left: 2.5em;
+                    a {
+                        color: rgb(224, 224, 224);
+                        font-weight: 900;
+                        text-decoration: none;
+                        &:hover {
+                            color: #4193bb;
+                            transition: .5s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+main {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 5em 2em 6em;
+    overflow: hidden;
+    .planet {
+        flex: 2;
+        text-align: center;
+        position: relative;
+        .pla {
+            max-width: 70%;
+        }
+        .geo {
+            position: absolute;
+            left: 40%;
+            top: 80%;
+            display: none;
+            max-width: 20%;
+        }
+    }
+    .info {
+        flex: 1;
+        color: white;
+        h1 {
+            font: 400 80px 'Antonio', sans-serif;
+            text-transform: uppercase;
+            padding-bottom: 15px;
+        }
+        .planet_info {
+            font: 14px 'Spartan', sans-serif;
+            line-height: 25px;
+        }
+        .source {
+            padding: 15px 0;
+            color: #838391;
+            a {
+                color: #fff;
+                font-family: 'Spartan', sans-serif;
+                &:hover {
+                    color: #38384f;
+                    transition: .5s;
+                }
+            }
+        }
+        .buttons {
+            div {
+                border: 1px solid #38384f;
+                padding: 15px;
+                margin: 15px 0;
+                font: 800 14px 'Spartan', sans-serif;
+                text-transform: uppercase;
+                user-select: none;
+                cursor: pointer;
+                span {
+                    padding: 10px;
+                    color: #838391;
+                }
+                &:hover{
+                    background-color: #38384f;
+                    transition: .5s;
+                }
+
+            }
+        }
+    }
+}
+.boxes {
+    max-width: 1200px;
+    margin:  0 auto 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: 'Antonio', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    .box {
+        text-align: center;
+        min-width: 255px;
+        margin: 5px ;
+        padding: 10px;
+        border: 1px solid #38384f;
+        h3{
+            font-size: 1em;
+            padding-bottom: 5px;
+            color: #838391;
+        }
+        h2 {
+            font-size: 1.9em;
+        }
+    }
+}
+@media (max-width: 900px) and (min-width : 750px){
+    header {
+        padding: 1em;
+        .container {
+            display: unset;
+            h1 {
+                text-align: center;
+                padding-bottom:  1em;
+            }
+            nav {
+                ul {
+                    justify-content: center;
+                    li {
+                        margin: 0 1.5em;
+                    }
+                }
+            }
+        }
+    }
+    main {
+        flex-direction: column;
+        .info {
+            display: flex;
+            align-items: center;
+            padding: 3em 0;
+            .left {
+                flex: 1.5;
+                padding-right: 1em;
+                h1 {
+                    font-size: 65px;
+                }
+            }
+            .buttons {
+                flex : 1;
+            }
+        }
+    }
+    .boxes {
+        .box {
+            min-width: 164px;
+            font-size: .8rem;
+        }
+    }
+}
+@media (max-width: 750px) and (min-width : 250px){
+    .hide_desktop {
+        display: block;
+    }
+    header {
+        .container {
+            nav {
+                z-index: 2;
+                display: none;
+                position: absolute;
+                left: 0;
+                width: 100%;
+                background-color: #070724;
+                ul {
+                    display: unset;
+                    li {
+                        margin-left: 0;
+                        border-bottom: .5px solid hsla(0, 0%, 100%, 0.2);
+                        &:last-child{
+                            border: 0;
+                        }
+                        a {
+                            display: flex;
+                            align-items: center;
+                            position: relative;
+                            height: 10vh;
+                            margin: 0;
+                            padding: 0 2em;
+                            font-size: .8rem;
+                            &:hover {
+                                background-color: #17173b;
+                            }
+                            &::after{
+                                content: ">";
+                                color: hsla(0, 0%, 100%, 0.5);
+                                position: absolute;
+                                right: 4em;
+                            }
+                            &::before {
+                                content : "";
+                                width: 20px;
+                                height: 20px;
+                                border-radius: 50%;
+                                margin-right:  20px;
+                            }
+                        }
+                        &:nth-of-type(1) a::before {
+                            background-color: #419ebb
+                            ;
+                        }
+                        &:nth-of-type(2) a::before {
+                            background-color: #eda249
+                            ;
+                        }
+                        &:nth-of-type(3) a::before {
+                            background-color: #6f2ed6
+                            ;
+                        }
+                        &:nth-of-type(4) a::before {
+                            background-color: #d14c32
+                            ;
+                        }
+                        &:nth-of-type(5) a::before {
+                            background-color: #d83a34
+                            ;
+                        }
+                        &:nth-of-type(6) a::before {
+                            background-color: #cd5120
+                            ;
+                        }
+                        &:nth-of-type(7) a::before {
+                            background-color: #1ec2a4
+                            ;
+                        }
+                        &:nth-of-type(8) a::before {
+                            background-color: #2d68f0
+                            ;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    main {
+        flex-direction: column;
+        .info {
+            display: unset;
+            padding: 3em 0;
+            .left {
+                h1 {
+                    font-size: 65px;
+                }
+                }
+        .buttons {
+            div {
+                font-size: 12px;
+            }
+        }
+        }
+    }
+    .boxes {
+        padding: 0 1em;
+        .box {
+            min-width: 90%;
+            margin: 0 auto 1em;
+            font-size: .8rem;
+        }
+    }
+}
